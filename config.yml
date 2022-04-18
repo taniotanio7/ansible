@@ -1,0 +1,159 @@
+downloads: ~/.ansible-downloads
+
+# ssh config
+source_key: "./.ssh/id_rsa"
+dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+
+# Configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove:
+  - TV
+  - Podcasts
+  - Contacts
+dockitems_persist:
+  - name: "kitty"
+    path: "/Applications/kitty.app/"
+  - name: "VSCode"
+    path: "/Applications/Visual Studio Code.app"
+
+dotfiles_repo: https://github.com/taniotanio7/dotfiles.git
+dotfiles_repo_local_destination: ~/dotfiles
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  # Main utils (GNU)
+  - coreutils
+  - moreutils
+  - findutils
+  - gnu-sed
+  - wget
+  - grep
+  - openssh
+  - screen
+  - git
+  - git-lfs
+  - tree
+  - ffmpeg
+  - openssl
+  - pv # pipe viewer (monitor pipe progress)
+  - p7zip # 7-zip
+  - rlwrap
+  - ssh-copy-id
+  - zopfli # zlib (gzip) compressor
+  - rclone
+  - brotli
+  - gettext
+  - iperf
+  - nmap
+  # Programming
+  - lua
+  - node
+  - go
+  - volta
+  - yarn
+  - pyenv
+  - sqlite
+  - awscli
+  - httpie
+  - neovim
+  - watchmen
+  - cmake
+  - direnv
+  # Modern utils
+  - fd
+  - fx
+  - fzf
+  - gd
+  - gh
+  - jq
+  - lsd
+  - bat
+  - ripgrep
+  - lazygit
+  - git-delta
+  - git-recent
+  - git-secrets
+  - ctop
+  - difftastic
+  # Fun
+  - thefuck
+  - grex # easy regexes
+  - tealdeer # tldr
+  - howdoi
+  - youtube-dl
+  - glow
+  - graphviz
+  # Shell
+  - zsh
+  - zsh-autosuggestions
+  - zsh-completions
+  - zsh-syntax-highlighting
+  - starship
+  - mcfly
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - chromedriver
+  - docker
+  - gpg-suite-no-mail
+  - google-chrome
+  - slack
+  - cron
+  - notion
+  - clickup
+  - warp
+  - visual-studio-code
+  - setapp
+  - raycast
+  - zoom
+  - telegram-desktop
+  - spotify
+  - gitify
+  - discord
+  - hey
+  - vimr
+  - imagemagick
+  - font-blex-mono-nerd-font
+  - font-jetbrains-mono-nerd-font
+  - font-space-mono-nerd-font
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps:
+  - { id: 441258766, name: "Magnet" }
+  - { id: 1534275760, name: "LanguageTool" }
+  - { id: 1480068668, name: "Messenger" }
+  - { id: 1433648537, name: "Passepartout" }
+  - { id: 1502839586, name: "Hand Mirror" }
+  - { id: 803453959, name: "Slack" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 747648890, name: "Telegram" }
+  - { id: 937984704, name: "Amphetamine" }
+  - { id: 409203825, name: "Numbers" }
+mas_email: "jonatanwitoszek@gmail.com"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+# - name: drush
+#   state: present # present/absent, default: present
+#   version: "^8.1" # default: N/A
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A
+npm_packages: 
+  - name: serve
+    state: latest
+# - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+pip_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+

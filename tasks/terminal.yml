@@ -1,0 +1,7 @@
+- name: Change shell to zsh
+  become: true
+  shell: |
+    "echo $(which zsh) >> /etc/shells"
+    chsh -s $(which zsh)
+- name: Install ohmyzsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

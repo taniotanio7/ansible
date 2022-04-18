@@ -1,0 +1,23 @@
+# nnn
+- name: Install dependencies for build
+  community.general.homebrew:
+    name:
+      - readline
+      - ncurses
+      - pkg-config
+    state: present
+- name: Clone nnn
+  ansible.builtin.git:
+    repo: https://github.com/jarun/nnn.git
+    dest: /tmp/nnn
+- name: Build nnn
+  become: true
+  make:
+    chdir: /tmp/nnn
+    target: all
+    params:
+      0_NERD: 1 # This option enables icon support
+- name: Copy nnn binary
+  copy:
+    src: /tmp/nnn/nnn
+    dest: /usr/local/bin
