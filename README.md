@@ -62,3 +62,12 @@ These are the avilable tags to run the playbook partially:
 - `terminal` - setting up zsh
 - `extra-packages` - extra packages that are installed using other packages manager or built from source
 - `dotfiles` - dotfiles cloned from separate repository
+
+## Inspired by
+
+Those are the ansible configurations that were an inspiration to mine (aka I've stolen the parts that I liked)
+
+- https://github.com/geerlingguy/mac-dev-playbook
+- https://github.com/math0ne/dotfiles/tree/master/playbooks
+- https://github.com/ThePrimeagen/ansible
+
