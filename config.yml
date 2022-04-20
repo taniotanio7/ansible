@@ -75,6 +75,14 @@ homebrew_installed_packages:
   - git-secrets
   - ctop
   - difftastic
+  - broot 
+  - cheat 
+  - bottom 
+  - gtop 
+  - gping 
+  - procs 
+  - zoxide 
+  - dog
   # Fun
   - thefuck
   - grex # easy regexes
