@@ -33,6 +33,8 @@ ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 Enter your macOS account password when prompted for the "BECOME" password
 Enter my super secret password when prompted for "Vault" password
 
+> Note: To skip tasks that require vault password use `--skip-tags vault`
+
 ## Testing configuration
 
 Use Docker for testing if the configuration works fine.
@@ -63,6 +65,9 @@ These are the avilable tags to run the playbook partially:
 - `terminal` - setting up zsh
 - `extra-packages` - extra packages that are installed using other packages manager or built from source
 - `dotfiles` - dotfiles cloned from separate repository
+- `vault` - tasks that require vault password
+  - `ssh` - task that installs my ssh key
+  - `gpg` - task that installs my gpg key
 
 ## Inspired by
 

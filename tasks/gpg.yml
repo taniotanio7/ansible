@@ -3,8 +3,10 @@
     src: "{{ source_gpg_key }}"
     dest: "~/gpg.key"
     mode: 0600
+  tags: ["vault"]
 - name: Install GPG key
   command: gpg --import ~/gpg.key
+  tags: ["vault"]
 - name: Remove temporary file
   ansible.builtin.file:
     path: "~/gpg.key"
