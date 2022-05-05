@@ -20,3 +20,19 @@
     src: ~/.vim
     dest: ~/.neovim
     state: link
+- name: Download vim-plug
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.vim/autoload/plug.vim
+    force: true
+- name: Make sure that plugged folder exists
+  ansible.builtin.file:
+    dest: ~/.vim/plugged
+    state: directory
+- name: Creat symlink for autoload (vim-plugged)
+  ansible.builtin.file:
+    src: ~/.vim/autoload
+    dest: ~/.config/nvim/autoload
+    state: link
+- name: Install vim plugins
+  shell: vim +'PlugInstall --sync' +qa

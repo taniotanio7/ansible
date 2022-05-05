@@ -50,6 +50,7 @@ homebrew_installed_packages:
   - gettext
   - iperf
   - nmap
+  - python3
   # Programming
   - lua
   - node
@@ -162,10 +163,17 @@ gem_packages: []
 npm_packages:
   - name: serve
     state: latest
+  - name: neovim
+    state: latest
 # - name: webpack
 #   state: present # present/absent/latest, default: present
 #   version: "^2.6" # default: N/A
-pip_packages: []
+pip_packages:
+  - name: ansible
+  - name: pyenv
+    version: latest
+  - name: neovim
+    version: latest
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
