@@ -15,3 +15,8 @@
   script: "{{dotfiles_repo_local_destination}}/install.sh"
 - name: Init git-secrets
   shell: git secrets --register-aws --global
+- name: Creat symlinks for NeoVim
+  ansible.builtin.file:
+    src: ~/.vim
+    dest: ~/.neovim
+    state: link
