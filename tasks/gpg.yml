@@ -1,0 +1,11 @@
+- name: Copy GPG Key
+  ansible.builtin.copy:
+    src: "{{ source_gpg_key }}"
+    dest: "~/gpg.key"
+    mode: 0600
+- name: Install GPG key
+  command: gpg --import ~/gpg.key
+- name: Remove temporary file
+  ansible.builtin.file:
+    path: "~/gpg.key"
+    state: absent

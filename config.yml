@@ -6,6 +6,9 @@ source_key_pub: "./files/.ssh/id_rsa.pub"
 dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
 dest_key_pub: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
 
+# gpg config
+source_gpg_key: "./files/gpg.asc"
+
 # Configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove:

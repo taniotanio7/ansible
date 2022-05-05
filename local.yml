@@ -25,6 +25,9 @@
     - import_tasks: tasks/ssh.yml
       tags: ['ssh', 'dotfiles']
 
+    - import_tasks: tasks/gpg.yml
+      tags: ['gpg', 'dotfiles']
+
     - import_tasks: tasks/dotfiles.yml
       tags: ['dotfiles']
 
