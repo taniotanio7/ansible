@@ -1,7 +1,12 @@
+- name: Check if dotfiles folder exists
+  ansible.builtin.stat:
+    path: "{{ dotfiles_repo_local_destination }}"
+  register: repo_check
 - name: Clone dotfiles repo
   ansible.builtin.git:
     repo: "{{ dotfiles_repo }}"
     dest: "{{ dotfiles_repo_local_destination }}"
+  when: not repo_check.stat.exists
 - name: Install stow
   community.general.homebrew:
     name: stow
