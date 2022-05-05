@@ -3,5 +3,30 @@
   shell: |
     "echo $(which zsh) >> /etc/shells"
     chsh -s $(which zsh)
+- name: Check if ohmyzsh is installed
+  stat:
+    path: $HOME/.oh-my-zsh
+  register: install_check
 - name: Install ohmyzsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  when: not install_check.stat.exists
+- name: Add homebrew to PATH (M1)
+  ansible.builtin.lineinfile:
+    path: $HOME/.zshrc
+    line: "PATH=/opt/homebrew/bin:$PATH"
+    insertafter: EOF
+  when: ansible_architecture == "arm64"
+- name: Add homebrew to PATH (Intel)
+  ansible.builtin.lineinfile:
+    path: $HOME/.zshrc
+    line: "PATH=/usr/local/bin:$PATH"
+    insertafter: EOF
+  when: ansible_architecture == "x86_64"
+- name: Install alias-tips plugin
+  ansible.builtin.git:
+    repo: https://github.com/djui/alias-tips.git
+    dest: $HOME/.oh-my-zsh/custom/plugins/alias-tips
+- name: Install zsh-autosuggestions
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
