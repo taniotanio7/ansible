@@ -16,7 +16,7 @@ pip3 install ansible
 ```
 
 > Note: There can be some schenanigans with python packages not being in the `PATH`. In order to fix that look where ansible was installed. On macOS it should be in `~/Library/Python/.../bin`. Check if that path is PATH configured in the .bashrc or .zshrc
-> Or just add Python to your PATH: `export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"`
+> Or just add Python to your PATH: `export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"`
 
 2. Install required Ansible Galaxy roles
 

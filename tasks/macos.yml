@@ -1,2 +1,3 @@
 - name: Run macOS configuration script
+  become: true
   script: ./files/macos.sh

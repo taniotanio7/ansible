@@ -21,7 +21,7 @@ dockitems_persist:
   - name: "VSCode"
     path: "/Applications/Visual Studio Code.app"
 
-dotfiles_repo: https://github.com/taniotanio7/dotfiles.git
+dotfiles_repo: https://github.com/witoszekdev/dotfiles.git
 dotfiles_repo_local_destination: ~/dotfiles
 
 homebrew_installed_packages:
@@ -61,7 +61,7 @@ homebrew_installed_packages:
   - awscli
   - httpie
   - neovim
-  - watchmen
+  - watchman
   - cmake
   - direnv
   # Modern utils
@@ -80,13 +80,13 @@ homebrew_installed_packages:
   - git-secrets
   - ctop
   - difftastic
-  - broot 
-  - cheat 
-  - bottom 
-  - gtop 
-  - gping 
-  - procs 
-  - zoxide 
+  - broot
+  - cheat
+  - bottom
+  - gtop
+  - gping
+  - procs
+  - zoxide
   - dog
   # Fun
   - thefuck
@@ -107,32 +107,35 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
+homebrew_cask_accept_external_apps: true
 homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - gpg-suite-no-mail
-  - google-chrome
-  - slack
-  - cron
-  - notion
-  - clickup
-  - warp
-  - visual-studio-code
-  - setapp
-  - raycast
-  - zoom
-  - telegram-desktop
-  - spotify
-  - gitify
-  - discord
-  - hey
-  - vimr
-  - imagemagick
-  - font-blex-mono-nerd-font
-  - font-jetbrains-mono-nerd-font
-  - font-space-mono-nerd-font
+  []
+  # - chromedriver
+  # - docker
+  # - gpg-suite-no-mail
+  # - google-chrome
+  # - slack
+  # - cron
+  # - notion
+  # - clickup
+  # - warp
+  # - visual-studio-code
+  # - setapp
+  # - raycast
+  # - zoom
+  # - telegram-desktop
+  # - spotify
+  # - gitify
+  # - discord
+  # - hey
+  # - vimr
+  # - font-blex-mono-nerd-font
+  # - font-jetbrains-mono-nerd-font
+  # - font-space-mono-nerd-font
+  # - rocket
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
@@ -159,7 +162,7 @@ gem_packages: []
 # - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
-npm_packages: 
+npm_packages:
   - name: serve
     state: latest
 # - name: webpack

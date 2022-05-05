@@ -18,6 +18,7 @@
     params:
       0_NERD: 1 # This option enables icon support
 - name: Copy nnn binary
+  become: true
   copy:
     src: /tmp/nnn/nnn
     dest: /usr/local/bin

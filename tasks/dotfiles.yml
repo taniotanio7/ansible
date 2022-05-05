@@ -1,10 +1,10 @@
 - name: Clone dotfiles repo
   ansible.builtin.git:
     repo: "{{ dotfiles_repo }}"
-    dest: "{{ dotfiles_repo_local_destination }}" 
-- name: Install stew
+    dest: "{{ dotfiles_repo_local_destination }}"
+- name: Install stow
   community.general.homebrew:
-    name: stew
+    name: stow
     state: present
 - name: Install dotfiles
   script: "{{dotfiles_repo_local_destination}}/install.sh"
