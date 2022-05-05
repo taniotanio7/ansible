@@ -6,6 +6,15 @@
     working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
   loop: "{{ composer_packages }}"
 
+- name: Install node from volta
+  shell: volta install node@16
+
+- name: Install npm from volta
+  shell: volta install npm
+
+- name: Install yarn from volta
+  shell: volta install yarn
+
 - name: Install global NPM packages.
   npm:
     name: "{{ item.name | default(item) }}"
@@ -14,6 +23,7 @@
     global: true
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ npm_packages }}"
+
 
 - name: Install global Pip packages.
   pip:
