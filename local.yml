@@ -21,15 +21,18 @@
   tasks:
     - import_tasks: tasks/terminal.yml
       tags: ['terminal']
-    
+
+    - import_tasks: tasks/ssh.yml
+      tags: ['ssh', 'dotfiles']
+
+    - import_tasks: tasks/dotfiles.yml
+      tags: ['dotfiles']
+
     - import_tasks: tasks/build-from-source.yml
       tags: ['extra-packages']
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
-
-    - import_tasks: tasks/dotfiles.yml
-      tags: ['dotfiles']
 
     - import_tasks: tasks/macos.yml
       tags: ['macos']

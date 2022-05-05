@@ -1,8 +1,10 @@
 downloads: ~/.ansible-downloads
 
 # ssh config
-source_key: "./.ssh/id_rsa"
+source_key: "./files/.ssh/id_rsa"
+source_key_pub: "./files/.ssh/id_rsa.pub"
 dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+dest_key_pub: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
 
 # Configure the Dock via dockutil.
 configure_dock: true

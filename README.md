@@ -27,10 +27,11 @@ ansible-galaxy install -r requirements.yml
 3. Run Ansible
 
 ```bash
-ansible-playbook main.yml --ask-become-pass
+ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 ```
 
 Enter your macOS account password when prompted for the "BECOME" password
+Enter my super secret password when prompted for "Vault" password
 
 ## Testing configuration
 
