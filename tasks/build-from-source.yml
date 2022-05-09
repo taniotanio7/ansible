@@ -22,3 +22,14 @@
   copy:
     src: /tmp/nnn/nnn
     dest: /usr/local/bin
+
+# dark-mode-notify
+- name: Clone dark-mode-notify
+  ansible.builtin.git:
+    repo: https://github.com/bouk/dark-mode-notify
+    dest: /tmp/dark-mode-notify
+- name: Build dark-mode-notify
+  become: true
+  ansible.builtin.shell: swiftc dark-mode-notify.swift -o /usr/local/bin/dark-mode-notify
+  args:
+    chdir: /tmp/dark-mode-notify
