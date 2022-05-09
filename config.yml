@@ -174,6 +174,8 @@ pip_packages:
     version: latest
   - name: neovim
     version: latest
+  - name: neovim-remote
+    version: latest
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
