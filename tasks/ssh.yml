@@ -8,7 +8,7 @@
   ansible.builtin.copy:
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
-    mode: 0600
+    mode: 0400
   tags: ["vault"]
 
 - name: Install ssh public key
@@ -22,7 +22,7 @@
   ansible.posix.authorized_key:
     user: "{{ lookup('env', 'USER') }}"
     state: present
-    key: ~/.ssh/id_rsa.pub
+    key: "{{ dest_key_pub }}"
   with_fileglob:
     - ~/.ssh/*.pub
   tags: ["vault"]
