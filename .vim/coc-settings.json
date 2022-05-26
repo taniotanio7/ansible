@@ -1,0 +1,6 @@
+{
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-vars.json": "file:///Users/jonatanwitoszek/ansible/config.yml",
+    "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible.json#/definitions/tasks": "file:///Users/jonatanwitoszek/ansible/tasks/utils.yml"
+  }
+}
