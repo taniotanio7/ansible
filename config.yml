@@ -89,6 +89,7 @@ homebrew_installed_packages:
   - procs
   - zoxide
   - dog
+  - gron
   # Fun
   - thefuck
   - grex # easy regexes
